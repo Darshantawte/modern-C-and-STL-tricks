@@ -26,3 +26,21 @@ Straight to the point, I have often used the `debug` macro which stringifies the
 int ten = 10;
 deb(ten); // prints "ten = 10"
 ```
+
+## Avoid remebering datatype of varibles
+```cpp
+vector<pair<pair<int,int>,int>> Job;
+
+
+//traditonal way to travere
+vector<pair<pair<int,int>,int>>:: iterator it;
+for (it = Job.begin(); it < Job.end(); it++)
+        cout << it->first->first << " "<<it->first->second<<" "....;
+
+
+//cool way using - auto keyword which automatically identifies the datatype used
+
+for(auto it:Job)
+{
+   cout<<it.first.first<<" "<<it.first.second<<" "<<it.second<<endl;
+}
