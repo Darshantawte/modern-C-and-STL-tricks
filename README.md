@@ -1,4 +1,4 @@
-# modern-C-and-STL-tricks
+# modern-C++-and-STL-tricks
 
 ## No more nested `min(x, min(y, ...))`
 Use initializer list and `std::min` and `std::max` to make life easy
@@ -27,6 +27,30 @@ int ten = 10;
 deb(ten); // prints "ten = 10"
 ```
 
+## Different ways to traverse using foreach loop
+```cpp
+  
+ vector<int> Arr;
+ 
+ //Type 1 - we create a copy of Arr and travere over it
+ 
+ for(auto i:Arr){
+   //some statements
+ }
+ 
+ //Type 2 - we traverse over the actual Arr elements(reference) and not a copy(space efficient) but issue is user can manipulate data
+     
+ 
+ for(auto &i:Arr){
+   //some statements
+ }
+ 
+ //Type 3 - Travere by reference also don't allow user to change data - Best used to print/display items of an container
+ 
+ for(const auto i:Arr){
+   //some statements
+ }
+```
 ## Avoid remebering datatype of varibles
 ```cpp
 vector<pair<pair<int,int>,int>> Job;
@@ -44,3 +68,4 @@ for(auto it:Job)
 {
    cout<<it.first.first<<" "<<it.first.second<<" "<<it.second<<endl;
 }
+```
